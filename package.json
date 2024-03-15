@@ -1,0 +1,57 @@
+{
+  "name": "react-mobx",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@babel/plugin-syntax-decorators": "^7.24.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "cross-env": "^7.0.3",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "mobx-react-lite": "^4.0.6",
+    "pako": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.24.0",
+    "concurrently": "^7.6.0",
+    "electron": "^23.1.0",
+    "electron-builder": "^23.6.0",
+    "wait-on": "^7.0.1",
+    "worker-loader": "^3.0.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "start:dev": "env-cmd -f dev.env react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\"",
+    "electron": "wait-on tcp:3000 && electron ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
